@@ -2,15 +2,9 @@ package com.example.randomToken;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.ObjectUtils;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
-import vn.com.mcredit.bnpl.entity.OtpHistory;
-import vn.com.mcredit.bnpl.enums.OtpTypeEnum;
-import vn.com.mcredit.bnpl.repositories.OtpHistoryRepository;
-import vn.com.mcredit.bnpl.repositories.specifications.OtpHistorySpecification;
-import vn.com.mcredit.bnpl.service.GetOtpNotificationService;
 
 import java.sql.*;
 import java.util.List;
