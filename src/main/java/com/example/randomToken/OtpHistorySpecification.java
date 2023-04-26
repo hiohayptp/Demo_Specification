@@ -35,8 +35,6 @@ public class OtpHistorySpecification implements Specification<OtpHistory> {
     public static Specification<OtpHistory> findByPhoneNumberOrTransactionId(String phoneNumber, OtpTypeEnum type) {
         return ((root, query, builder) -> {
             List<Predicate> predicates = new ArrayList<>();
-//            if (StringUtils.isNotEmpty(phoneNumber)) predicates.add(builder.equal(root.get("phoneNumber"), phoneNumber));
-//            if (ObjectUtils.isNotEmpty(type)) predicates.add(builder.equal(root.get("type"), type));
             return builder.and(predicates.toArray(Predicate[]::new));
         });
     }

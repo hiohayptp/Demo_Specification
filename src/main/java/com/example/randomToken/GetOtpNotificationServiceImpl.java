@@ -43,7 +43,7 @@ public class GetOtpNotificationServiceImpl{
     public String getOtpV2(String phoneNumber, OtpTypeEnum type) {
         PageRequest pageRequest = PageRequest.of(0, 1, Sort.by("createdDate").descending());
         List<OtpHistory> otpHistories = otpHistoryRepository.findAll(OtpHistorySpecification.findByPhoneNumberOrTransactionId(phoneNumber, type), pageRequest).getContent();
-        if (!otpHistories.isEmpty() && ObjectUtils.isNotEmpty(otpHistories.get(0))) {
+        if (!otpHistories.isEmpty() &&   otpHistories.get(0) == null) {
             return otpHistories.get(0).getCode();
         }
         return null;
