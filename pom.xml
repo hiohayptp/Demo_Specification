@@ -74,7 +74,12 @@
 			<artifactId>javassist</artifactId>
 			<version>3.25.0-GA</version>
 		</dependency>
-	</dependencies>
+        <dependency>
+            <groupId>com.amazonaws</groupId>
+            <artifactId>aws-java-sdk-mediapackage</artifactId>
+            <version>1.11.996</version>
+        </dependency>
+    </dependencies>
 	<build>
 		<plugins>
 			<plugin>

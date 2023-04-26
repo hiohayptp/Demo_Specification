@@ -15,7 +15,7 @@ public class JWTUtils {
             if (servletRequestAttributes != null) {
                 request = servletRequestAttributes.getRequest();
                 var authorization = request.getHeader("Authorization");
-                return ObjectUtils.isNotEmpty(authorization) ? authorization.replace("Bearer ", "") : "";
+                return authorization.isEmpty() ? authorization.replace("Bearer ", "") : "";
             } else {
                 return "";
             }

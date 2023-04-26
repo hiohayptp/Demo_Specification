@@ -1,16 +1,16 @@
 package com.example.Authorization;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
-import javax.servlet.http.HttpServletRequest;
-
 @Service
+@Slf4j
 public class IAuthService {
-    public String getWebView(HttpServletRequest httpServletRequest) {
+    public String getWebView() {
         String token = JWTUtils.getToken();
-        if (ObjectUtils.isEmpty(token)) {
-            throw new ApplicationException(HttpStatusEnums.ACCOUNT_ERROR.getMessage(),
-                    HttpStatusEnums.ACCOUNT_ERROR.getCode(), null);
+        if (token.isEmpty()) {
+            log.info("token ís null");
         }
+        return token;
     }
 }
